@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+<head>
+    <title>Dashboard</title>
+    <style>
+    body{
+   		 background-color:violet;
+    }
+    div{
+    	margin-left:100px;
+    	margin-top:50px;
+    	//margin-right:300px;
+    	margin-bottom:150px 
+    	padding:10px;
+    	text-align:center;
+    }
+    aside{
+    	float:left;
+    	padding:10px;
+    	background-color:yellow;
+    	padding-bottom:100px;
+    	padding-right:150px;
+    	padding-left:25px;
+    	margin-left:50px;
+    	margin-top:50px;
+    }
+    li{
+    	font-size:30px
+    }	
+    </style>
+</head>
+<body>
+	<div>
+    <h1 style="color:red;">${welcomeMessage}</h1>
+    </div>
+    <!-- Add more content and components as needed -->
+    <div style="float:right;">
+   		<img src="${asset:context:images/apache-tapestry.png}"  width="600"/>
+   	</div>
+	  <aside>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/About">About</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/Index">logout</a></li>
+        </ul>
+    </aside>
+    
+</body>
+</html>

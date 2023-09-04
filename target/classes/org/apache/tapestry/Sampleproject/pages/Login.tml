@@ -1,0 +1,71 @@
+<html  title="Login | Sampleproject"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+      xmlns:p="tapestry:parameter">
+
+<style>
+	.background-container {
+    background-color: rgb(110, 110, 209);
+    background-image: url('./crimecars.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  	}
+	.boxStyle1 {
+    width: 400px;
+    height: 400px;
+    background-color: rgba(128, 128, 128, 0.5);
+    display: flex;
+    justify-content: center;
+   
+    flex-direction: column;
+  }
+  .input {
+    width: 80%;
+    padding: 5px;
+    margin-left: 40px;
+    font-size: 16px;
+    border: darkorchid;
+    border-radius: 5px;
+  }
+  .but {
+    background-color: #ff9900; /* Orange color */
+    color: white;
+    align-items: center;
+    width: 100px; /* Set the width */
+    height: 50px; /* Set the height */
+    padding: 10px; /* Adjust padding as needed */
+    border: none;
+    border-radius: 10px; /* Increase border radius for rounded corners */
+    font-size: 18px; /* Increase font size */
+    cursor: pointer;
+    margin-top: 25px;
+    margin-left: 150px;
+    transition: background-color 0.2s; /* Add a smooth transition effect */
+  }
+</style>
+
+
+
+
+<div class="background-container">
+    <div class="boxStyle1"><br/>
+        <t:form t:id="login">
+            <h2 style=" font-size:30px;" class="input">Please sign in</h2>
+            <div class="mb-3">
+                <t:textfield t:id="email"  class="input" validate="required" placeholder="Email address"/>
+            </div>
+            <div class="mb-3">
+                <t:passwordfield t:id="password" class="input" validate="required" placeholder="Password"/>
+            </div>
+            <div class="mb-3">
+                <t:submit class="but" value="Sign in"/>
+            </div>
+        </t:form>
+    </div>
+</div>
+
+</html>

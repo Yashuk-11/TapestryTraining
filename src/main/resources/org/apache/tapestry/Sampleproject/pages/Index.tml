@@ -1,0 +1,21 @@
+<html t:type="layout" title="Index | Sampleproject"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+ <style>
+ 	h1{
+ 		text-align:center;
+ 		color:red;
+ 	}
+ </style>    
+<div class="row">
+    <div class="col-12">
+    	<br/><h1 id="title">${message:greeting}</h1>
+        <p>
+            <img src="${asset:context:images/apache-tapestry.png}" alt="${message:greeting}" title="${message:greeting}" width="600"/>
+        </p>
+        
+        <p>The current time is: <strong>${currentTime}</strong></p>
+    </div>
+</div>
+
+</html>
+
