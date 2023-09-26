@@ -8,6 +8,7 @@
  </style>    
 <div class="row">
     <div class="col-12">
+    	<t:alerts />
     	<br/><h1 id="title">${message:greeting}</h1>
         <p>
             <img src="${asset:context:images/apache-tapestry.png}" alt="${message:greeting}" title="${message:greeting}" width="600"/>

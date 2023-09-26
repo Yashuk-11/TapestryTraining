@@ -56,28 +56,14 @@
             	 <t:textfield t:id="name"  class="input" validate="required" placeholder="Full Name"/>
             </div><br/>
             <div class="col-12">
-            	 <t:textfield t:id="email"  class="input" validate="required" placeholder="Email"/>
+            	 <t:textfield t:id="email" t:value="email" class="input" validate="required" placeholder="Email"/>
             </div><br/>
             <div class="col-12">
             	 <t:passwordfield t:id="password"  class="input" validate="required" placeholder="Password"/>
             </div>
             <div class="col-12"><br/>
                 <t:submit class="but" value="Sign up"/>
-            </div>                      
-         <!--   <div class="mb-2">
-                <t:textfield t:id="name"  class="form-control" validate="required" placeholder="Name"/>
-            </div>
-            <div class="mb-3">
-                <t:textfield t:id="email" class="form-control" validate="required" placeholder="Email"/>
-            </div>
-            
-             <div class="mb-3">
-                <t:passwordfield t:id="password" class="form-control" validate="required" placeholder="Password"/>
-            </div>
-            <div class="mb-3">
-                <t:submit class="btn btn-primary btn-large" value="Sign up"/>
-            </div>-->
-            
+            </div>                               
         </t:form>
     </div>
 </div>  

@@ -1,8 +1,17 @@
 <!DOCTYPE html>
-<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+<html 
+  xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
 <head>
     <title>Dashboard</title>
     <style>
+    
+		table, th, td {
+ 		 border: 1px solid;
+ 		 font-size:20px;
+ 		 margin-left:400px;
+ 		 	padding:10px;
+		}
+
     body{
    		 background-color:violet;
     }
@@ -26,18 +35,68 @@
     }
     li{
     	font-size:30px
+    }
+    alert{
+    	margin-right:500px;
+    	margin-left:100px;
+    	
     }	
     </style>
 </head>
 <body>
-	<div>
+<t:alerts class="alert"/>
+	<div >
+	<t:form t:id="but">
+	 <button  style="font-size:20px;float:right;">Logout</button>
+	</t:form>
     <h1 style="color:red;">${welcomeMessage}</h1>
+    <p style="font-size:40px;" >${name}</p>
+   
+    <br></br>
+   
     </div>
-    <!-- Add more content and components as needed -->
+    
+	<table style="border:1px;">
+    	<tbody>
+        	<tr t:type="Loop" t:source="data" t:value="row">
+        		<th>ID</th><td>${getElementByIndex(0)}</td></tr>
+        	<tr t:type="Loop" t:source="data" t:value="row">
+            	<th>NAME</th><td>${getElementByIndex(1)}</td></tr>
+            <tr t:type="Loop" t:source="data" t:value="row">
+            	<th>EMAIL</th><td>${getElementByIndex(2)}</td></tr>
+            <tr t:type="Loop" t:source="data" t:value="row">
+            	<th>Password</th><td>${getElementByIndex(3)}</td></tr>
+            <tr t:type="Loop" t:source="data" t:value="row">
+            	<th>DATE OF BIRTH</th><td>${getElementByIndex(4)}</td></tr>
+            <tr t:type="Loop" t:source="data" t:value="row">
+            	<th>CONTACT NUMBER</th><td>${getElementByIndex(5)}</td></tr>
+            <tr t:type="Loop" t:source="data" t:value="row">
+            	<th>LinkedIn url</th><td>${getElementByIndex(6)}</td></tr>
+            <td>
+                <a style="font-size:30px;" t:type="actionlink"  t:id="editLink" t:context="${getElementByIndex(2)}">Edit</a>
+            </td>
+           <td>
+                <a style="font-size:30px;"  t:type="actionlink" t:id="DeleteLink" t:context="${getElementByIndex(2)}">DELETE</a>
+            </td>
+   		</tbody>
+  	</table>
+	
+	
+<!--	<table>
+		<tbody>
+			 <tr t:type="Loop" t:source="data" t:value="row">
+            	<th><t:submit value="DELETE" t:id="button1" t:event="button1Clicked"/></th><td><t:submit value="EDIT" t:id="button2" t:event="button2Clicked"/></td>
+        	</tr>
+		</tbody>
+	</table>
+
+
+
+     Add more content and components as needed
     <div style="float:right;">
    		<img src="${asset:context:images/apache-tapestry.png}"  width="600"/>
    	</div>
-	  <aside>
+	 <aside>
         <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/About">About</a></li>
@@ -46,6 +105,7 @@
             <li><a href="/Index">logout</a></li>
         </ul>
     </aside>
-    
+    -->
+    <t:alerts show="top"/>
 </body>
 </html>

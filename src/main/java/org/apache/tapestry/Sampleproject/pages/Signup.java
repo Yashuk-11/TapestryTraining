@@ -1,51 +1,31 @@
-package org.apache.tapestry.Sampleproject.pages;
+ package org.apache.tapestry.Sampleproject.pages;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.apache.tapestry.Sampleproject.Acess.SignupAcces;
-import org.apache.tapestry.Sampleproject.Acess.Signupacess;
-import org.apache.tapestry.Sampleproject.model.Signupmodel;
-//import org.apache.tapestry.Sampleproject.services.Item;
-import org.apache.tapestry5.alerts.AlertManager;
-import org.apache.tapestry5.annotations.Component;
+import java.util.ArrayList;
+
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import org.apache.tapestry5.annotations.InjectComponent;
 import org.apache.tapestry5.annotations.OnEvent;
 import org.apache.tapestry5.annotations.Property;
-import org.apache.tapestry5.corelib.components.BeanEditForm;
 import org.apache.tapestry5.corelib.components.Form;
 import org.apache.tapestry5.corelib.components.PasswordField;
 import org.apache.tapestry5.corelib.components.TextField;
+import org.apache.tapestry5.http.Link;
 import org.apache.tapestry5.ioc.annotations.Inject;
+import org.apache.tapestry5.services.PageRenderLinkSource;
 import org.hibernate.Session;
-
-
-
+import com.example.model.User;
+import com.example.service.Userservice;
 
 public class Signup {
 
-    private static final Logger logger = LogManager.getLogger(Signup.class);
-    
-  // @Inject
-  //  private SignupAcces signupacess;
-    
-  //  @Inject
-//    Session session;
-    
-    @Inject
-    private AlertManager alertManager;
-
-   @InjectComponent("Signup")
-   // @Component
+    private static final String pat = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
+   
+    @InjectComponent("Signup")	
     private Form Signupform;
    	
-   //	@Property
- //  	private Signupmodel newitem;
-
     @InjectComponent("email")
     private TextField emailField;
 
@@ -61,76 +41,47 @@ public class Signup {
     @Property
     private String password;
     
+    @Inject
+    private Userservice userService;
+    
     @Property
     private String name;
-
+    @Inject
+    private Session session;
     
+    @Inject
+    private PageRenderLinkSource pageRenderLinkSource;
+
     @OnEvent(value = "success", component = "Signup")
     Object onSuccessFromSignup() {
-    	 if (name != null && !name.isEmpty() && email != null && !email.isEmpty() && password != null && !password.isEmpty()) {
-    		// alertManager.success("User registration successful!");
-    	try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			String jdbcUrl = "jdbc:mysql://localhost:3306/crimes";
-	         String dbUsername = "root";
-	         String dbPassword = "123456";
-
-	         try (Connection connection = DriverManager.getConnection(jdbcUrl, dbUsername, dbPassword)) {
-	        	
-	             String insertQuery = "INSERT INTO user (name, email, password) VALUES (?, ?, ?)";
-
-	         PreparedStatement preparedStatement = connection.prepareStatement(insertQuery);
-	             preparedStatement.setString(1, name);
-	             preparedStatement.setString(2, email);
-	             preparedStatement.setString(3, password);
-	             int i=preparedStatement.executeUpdate();
-	           //  connection.commit();
-	             if(i>0) {
-	            	 alertManager.success("User registration successful!");
-	                 return Login.class;
-	             }
-	            
-	         
-	        
-	    } catch (SQLException e) {
-	        // Handle database error
-	        logger.error("Error saving user to the database.", e);
-	        alertManager.error("Sorry, an error occurred during registration.");
-	        // Stay on the same page or redirect to an error page
-	    }
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-    	 }
-         return About.class;    
-}
-    	/*
-    	//return Index.class;
-    	 try {
-             // Save the new user to the database
-             signupacess.save(newitem);
-
-             // Clear the form
-             //Signupform.clear();
-
-             // Optionally, you can return a response or navigate to another page
-             logger.info("Registration successful!");
-             alertManager.success("Welcome aboard!");
-
-             return Index.class;
-         } catch (SQLException e) {
-             // Handle database error
-             logger.error("Error saving user to the database.", e);
-             alertManager.error("Sorry, an error occurred during registration.");
-             return null; // Stay on the same page
-       // logger.info("Login successful!");
-        //alertManager.success("Welcome aboard!");
-        
-        //return Index.class;
-         }
-        */
+    	
+        if (isValidemail(email)) {
+        	User u=userService.getUserByEmail(email);
+        	if(u!=null) {
+        		Signupform.recordError(emailField, "Entered email id already exists"); 
+            	return null;
+        	}
+        	List<User> usersToInsert = new ArrayList<>();              
+            User newUser = new User();
+            newUser.setName(name);
+            newUser.setEmail(email);
+            newUser.setPassword(password);               
+            usersToInsert.add(newUser);
+            userService.insertUsers(usersToInsert);
+            Link targetPageLink = pageRenderLinkSource.createPageRenderLinkWithContext(Userform.class, name, email);
+            return targetPageLink;
+        } else {
+            Signupform.recordError(emailField, "Invalid email address.");
+        }
+        return null;
     }
+    
+    public static boolean isValidemail(String E) {
+        Pattern pattern = Pattern.compile(pat);
+        Matcher matcher = pattern.matcher(E);
+        return matcher.matches();
+    }
+}
     
   
 

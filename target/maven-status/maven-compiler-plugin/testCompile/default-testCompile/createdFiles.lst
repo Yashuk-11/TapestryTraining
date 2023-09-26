@@ -1,0 +1,5 @@
+org\apache\tapestry\Sampleproject\tapestry\RunWithJetty.class
+org\apache\tapestry\Sampleproject\unit\ClassTest.class
+org\apache\tapestry\Sampleproject\tapestry\integration\pages\NavigationTest.class
+org\apache\tapestry\Sampleproject\tapestry\unit\pages\IndexTest.class
+org\apache\tapestry\Sampleproject\tapestry\integration\pages\LoginTest.class

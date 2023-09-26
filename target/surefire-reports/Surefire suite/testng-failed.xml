@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" name="Failed suite [Surefire suite]" verbose="0">
+  <test thread-count="1" name="Surefire test(failed)" verbose="0">
+    <classes>
+      <class name="org.apache.tapestry.Sampleproject.tapestry.integration.pages.NavigationTest">
+        <methods>
+          <include name="navigationError404"/>
+          <include name="navigationLogin"/>
+          <include name="testShutdown"/>
+          <include name="navigationAbout"/>
+          <include name="cleanup"/>
+          <include name="cleanupTestMethod"/>
+          <include name="setup"/>
+          <include name="navigationIndex"/>
+          <include name="testStartup"/>
+          <include name="indicateTestMethodName"/>
+        </methods>
+      </class> <!-- org.apache.tapestry.Sampleproject.tapestry.integration.pages.NavigationTest -->
+      <class name="org.apache.tapestry.Sampleproject.tapestry.integration.pages.LoginTest">
+        <methods>
+          <include name="testShutdown"/>
+          <include name="loginError"/>
+          <include name="cleanup"/>
+          <include name="cleanupTestMethod"/>
+          <include name="setup"/>
+          <include name="testStartup"/>
+          <include name="loginSuccess"/>
+          <include name="indicateTestMethodName"/>
+        </methods>
+      </class> <!-- org.apache.tapestry.Sampleproject.tapestry.integration.pages.LoginTest -->
+    </classes>
+  </test> <!-- Surefire test(failed) -->
+</suite> <!-- Failed suite [Surefire suite] -->

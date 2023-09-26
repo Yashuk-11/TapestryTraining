@@ -1,10 +1,9 @@
 package org.apache.tapestry.Sampleproject.services;
 
 import org.apache.tapestry5.SymbolConstants;
-import org.apache.tapestry5.commons.Configuration;
+
 import org.apache.tapestry5.commons.MappedConfiguration;
 import org.apache.tapestry5.ioc.ServiceBinder;
-import org.apache.tapestry5.services.LibraryMapping;
 
 /**
  * This module is automatically included as part of the Tapestry IoC Registry if <em>tapestry.execution-mode</em>

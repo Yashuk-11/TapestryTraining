@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 24, Failures: 1, Errors: 0, Skipped: 23, Time elapsed: 131.093 s <<< FAILURE! - in TestSuite
+org.apache.tapestry.Sampleproject.tapestry.integration.pages.LoginTest.testStartup[org.testng.TestRunner@45b7c97f, org.testng.xml.XmlTest@375ef8dc](0)  Time elapsed: 130.941 s  <<< FAILURE!
+io.github.bonigarcia.wdm.config.WebDriverManagerException: org.apache.hc.client5.http.HttpHostConnectException: Connect to https://raw.githubusercontent.com:443 [raw.githubusercontent.com/49.44.79.236, raw.githubusercontent.com/2405:200:1607:2820:41:0:0:36] failed: Connection timed out: no further information
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to https://raw.githubusercontent.com:443 [raw.githubusercontent.com/49.44.79.236, raw.githubusercontent.com/2405:200:1607:2820:41:0:0:36] failed: Connection timed out: no further information
+

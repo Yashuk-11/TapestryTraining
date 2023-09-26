@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+<head>
+    <title>Login Successful</title>
+</head>
+<body>
+	
+    <h1>Login Successful</h1>
+    <p>You have successfully logged in.</p>
+
+    <t:form t:id="Gmail">
+        <label for="email">Enter Gmail ID:</label>
+        <t:textfield t:id="email" t:value="email" t:placeholder="example@gmail.com"/>
+        <t:submit t:id="sendEmail" t:value="Send Email"/>
+    </t:form>
+</body>
+</html>

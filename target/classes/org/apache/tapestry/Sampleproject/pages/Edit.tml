@@ -1,0 +1,43 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+    
+        <h1>User Profile</h1>
+        <form t:type="form" t:id="Edit">
+           
+
+            <label for="name">Name:</label>
+            <t:textfield t:id="name" t:value="name" validate="required"/>
+            <br />
+
+            <label for="email">Email:</label>
+            <t:textfield t:id="email" t:value="email"  validate="required"/>
+            <br />
+
+            <label for="password">Password:</label>
+            <t:textfield t:id="password" t:value="password" validate="required" />
+            <br />
+			
+            <label for="bdate">Date of birth:</label>	 
+            	 <t:datefield t:id="bdate" t:value="bdate"  placeholder="Date of birth" validate="required"/>
+           <br />
+            <label for="cnumber">Contact number:</label>
+            	 <t:textfield t:id="cnumber" t:value="cnumber"   validate="required" placeholder="Contact number"/>
+           <label for="url">Linkedin url:</label><br />
+            	 <t:textfield t:id="url" t:value="url"  validate="required" placeholder="Linkedin profile link"/>
+          		 <t:error for="url"/><br />
+           
+         <!--   <label for="bdate">Birthdate:</label>
+            <t:textfield t:id="bdate" t:value="bdate" />
+            <br />
+
+            <label for="cnumber">Contact Number:</label>
+            <t:textfield t:id="cnumber" t:value="cnumber" />
+            <br />
+
+            <label for="url">URL:</label>
+            <t:textfield t:id="url" t:value="url" />
+            <br />-->
+
+            <input type="submit" value="Save" />
+        </form>
+    
+</html>

@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+<t:form t:id="smsForm"  t:zone="smsZone">
+    <p>Send SMS:</p>
+    <t:textfield t:id="phoneNumber" t:value="phoneNumber" placeholder="Phone Number" />
+    <t:textfield t:id="message" t:value="message" placeholder="Message" />
+
+    <t:submit t:id="sendButton" value="Send" />
+</t:form>
+</html>
