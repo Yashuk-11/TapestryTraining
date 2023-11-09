@@ -1,13 +1,12 @@
 package com.example.service;
 
 import java.util.List;
-
 import org.apache.tapestry5.hibernate.annotations.CommitAfter;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
-
 import com.example.model.User;
 
 public class UserserviceImp implements Userservice{
@@ -25,7 +24,7 @@ public class UserserviceImp implements Userservice{
         try (Session session = sessionFactory.openSession()) {
             Transaction transaction = session.beginTransaction();
             for (User user : users) {
-                session.save(user); // Use save instead of native SQL query
+                session.save(user); 
             }
             transaction.commit();
         } catch (Exception e) {
@@ -57,7 +56,6 @@ public class UserserviceImp implements Userservice{
             for (User user : users) {
                 User existingUser = getUserByEmail(user.getEmail());
                 if (existingUser != null) {
-                    // Update the user fields
                     existingUser.setBdate(user.getBdate());
                     existingUser.setCnumber(user.getCnumber());
                     existingUser.setUrl(user.getUrl());
@@ -93,4 +91,18 @@ public class UserserviceImp implements Userservice{
         }
         return null;
     }
+    
+    @Override
+    @CommitAfter
+    public List<User> getUserDetails() {
+        try (Session session = sessionFactory.openSession()) {
+        	Query q=session.createQuery("from User");
+        	List<User> lst = q.list();
+    		return lst;  	
+        } catch (Exception e) {
+            e.printStackTrace(); 
+        }
+        return null;
+    }
+   
 }

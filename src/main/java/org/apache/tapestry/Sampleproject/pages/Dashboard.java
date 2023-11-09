@@ -2,7 +2,6 @@ package org.apache.tapestry.Sampleproject.pages;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.apache.tapestry5.alerts.AlertManager;
 import org.apache.tapestry5.annotations.InjectComponent;
 import org.apache.tapestry5.annotations.InjectPage;

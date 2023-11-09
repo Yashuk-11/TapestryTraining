@@ -1,0 +1,213 @@
+EXCEPTION STACK:
+
+
+         Exception: org.apache.tapestry5.ioc.internal.OperationException
+           Message: Render queue error in Expansion[PropBinding[expansion Admindashboard(getElementByIndex(u))]]: Coercion of [com.example.model.User@279a73a9] to type java.lang.Integer (via Object --> String, String --> Integer) failed: For input string: "[com.example.model.User@279a73a9]"
+          location: classpath:org/apache/tapestry/Sampleproject/pages/Admindashboard.tml, line 15
+             trace: Handling page render request for page Admindashboard
+
+         Exception: org.apache.tapestry5.internal.services.RenderQueueException
+           Message: Render queue error in Expansion[PropBinding[expansion Admindashboard(getElementByIndex(u))]]: Coercion of [com.example.model.User@279a73a9] to type java.lang.Integer (via Object --> String, String --> Integer) failed: For input string: "[com.example.model.User@279a73a9]"
+  activeComponents: InternalComponentResources[Admindashboard]
+                    InternalComponentResources[Admindashboard:loop]
+          location: classpath:org/apache/tapestry/Sampleproject/pages/Admindashboard.tml, line 15
+
+         Exception: org.apache.tapestry5.commons.internal.util.TapestryException
+           Message: Coercion of [com.example.model.User@279a73a9] to type java.lang.Integer (via Object --> String, String --> Integer) failed: For input string: "[com.example.model.User@279a73a9]"
+          location: classpath:org/apache/tapestry/Sampleproject/pages/Admindashboard.tml, line 15
+
+         Exception: org.apache.tapestry5.commons.util.CoercionFailedException
+           Message: Coercion of [com.example.model.User@279a73a9] to type java.lang.Integer (via Object --> String, String --> Integer) failed: For input string: "[com.example.model.User@279a73a9]"
+
+         Exception: java.lang.NumberFormatException
+           Message: For input string: "[com.example.model.User@279a73a9]"
+
+  Stack trace:
+
+  - java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+  - java.base/java.lang.Integer.parseInt(Integer.java:668)
+  - java.base/java.lang.Integer.valueOf(Integer.java:999)
+  - org.apache.tapestry5.commons.services.CoercionTuple$CoercionWrapper.coerce(CoercionTuple.java:58)
+  - org.apache.tapestry5.commons.internal.services.CompoundCoercion.coerce(CompoundCoercion.java:46)
+  - org.apache.tapestry5.commons.internal.services.TypeCoercerImpl$TargetCoercion.coerce(TypeCoercerImpl.java:78)
+  - org.apache.tapestry5.commons.internal.services.TypeCoercerImpl.coerce(TypeCoercerImpl.java:157)
+  - $TypeCoercer_13995892c72fd.coerce(Unknown Source)
+  - org.apache.tapestry5.beanmodel.internal.services.PropertyConduitDelegate.coerce(PropertyConduitDelegate.java:45)
+  - $InternalPropertyConduit_13995892c73aa.get(Unknown Source)
+  - org.apache.tapestry5.internal.bindings.PropBinding.get(PropBinding.java:63)
+  - org.apache.tapestry5.internal.structure.ExpansionPageElement.render(ExpansionPageElement.java:45)
+  - org.apache.tapestry5.internal.services.RenderQueueImpl.run(RenderQueueImpl.java:79)
+  - org.apache.tapestry5.internal.services.PageRenderQueueImpl.render(PageRenderQueueImpl.java:121)
+  - $PageRenderQueue_13995892c73bd.render(Unknown Source)
+  - $PageRenderQueue_13995892c73bc.render(Unknown Source)
+  - org.apache.tapestry5.internal.services.MarkupRendererTerminator.renderMarkup(MarkupRendererTerminator.java:37)
+  - org.apache.tapestry5.internal.services.PageNameMetaInjector.renderMarkup(PageNameMetaInjector.java:41)
+  - $MarkupRenderer_13995892c73bf.renderMarkup(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$28.renderMarkup(TapestryModule.java:1880)
+  - $MarkupRenderer_13995892c73bf.renderMarkup(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$27.renderMarkup(TapestryModule.java:1870)
+  - $MarkupRenderer_13995892c73bf.renderMarkup(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$26.renderMarkup(TapestryModule.java:1854)
+  - $MarkupRenderer_13995892c73bf.renderMarkup(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$25.renderMarkup(TapestryModule.java:1838)
+  - $MarkupRenderer_13995892c73bf.renderMarkup(Unknown Source)
+  - org.apache.tapestry5.modules.JavaScriptModule$1.renderMarkup(JavaScriptModule.java:326)
+  - $MarkupRenderer_13995892c73bf.renderMarkup(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$24.renderMarkup(TapestryModule.java:1821)
+  - $MarkupRenderer_13995892c73bf.renderMarkup(Unknown Source)
+  - org.apache.tapestry5.internal.services.javascript.AddBrowserCompatibilityStyles.renderMarkup(AddBrowserCompatibilityStyles.java:45)
+  - $MarkupRenderer_13995892c73bf.renderMarkup(Unknown Source)
+  - org.apache.tapestry5.internal.services.javascript.ConfigureHTMLElementFilter.renderMarkup(ConfigureHTMLElementFilter.java:45)
+  - $MarkupRenderer_13995892c73bf.renderMarkup(Unknown Source)
+  - $MarkupRenderer_13995892c73bb.renderMarkup(Unknown Source)
+  - org.apache.tapestry5.internal.services.PageMarkupRendererImpl.renderPageMarkup(PageMarkupRendererImpl.java:47)
+  - $PageMarkupRenderer_13995892c73b9.renderPageMarkup(Unknown Source)
+  - org.apache.tapestry5.internal.services.PageResponseRendererImpl.renderPageResponse(PageResponseRendererImpl.java:64)
+  - $PageResponseRenderer_13995892c7380.renderPageResponse(Unknown Source)
+  - org.apache.tapestry5.internal.services.PageRenderRequestHandlerImpl.handle(PageRenderRequestHandlerImpl.java:77)
+  - org.apache.tapestry5.modules.TapestryModule$33.handle(TapestryModule.java:2047)
+  - $PageRenderRequestHandler_13995892c7382.handle(Unknown Source)
+  - $PageRenderRequestHandler_13995892c737c.handle(Unknown Source)
+  - org.apache.tapestry5.internal.services.ComponentRequestHandlerTerminator.handlePageRender(ComponentRequestHandlerTerminator.java:54)
+  - org.apache.tapestry5.internal.services.DeferredResponseRenderer.handlePageRender(DeferredResponseRenderer.java:57)
+  - $ComponentRequestHandler_13995892c737d.handlePageRender(Unknown Source)
+  - org.apache.tapestry5.services.InitializeActivePageName.handlePageRender(InitializeActivePageName.java:49)
+  - $ComponentRequestHandler_13995892c737d.handlePageRender(Unknown Source)
+  - org.apache.tapestry5.internal.services.RequestOperationTracker$2.run(RequestOperationTracker.java:78)
+  - org.apache.tapestry5.ioc.internal.OperationTrackerImpl.run(OperationTrackerImpl.java:56)
+  - org.apache.tapestry5.ioc.internal.PerThreadOperationTracker.run(PerThreadOperationTracker.java:60)
+  - org.apache.tapestry5.ioc.internal.RegistryImpl.run(RegistryImpl.java:1286)
+  - org.apache.tapestry5.internal.services.RequestOperationTracker.handlePageRender(RequestOperationTracker.java:71)
+  - $ComponentRequestHandler_13995892c737d.handlePageRender(Unknown Source)
+  - $ComponentRequestHandler_13995892c734a.handlePageRender(Unknown Source)
+  - org.apache.tapestry5.internal.services.PageRenderDispatcher.dispatch(PageRenderDispatcher.java:61)
+  - $Dispatcher_13995892c734c.dispatch(Unknown Source)
+  - $Dispatcher_13995892c7341.dispatch(Unknown Source)
+  - org.apache.tapestry5.http.modules.TapestryHttpModule$RequestHandlerTerminator.service(TapestryHttpModule.java:492)
+  - org.apache.tapestry5.internal.services.RequestErrorFilter.service(RequestErrorFilter.java:31)
+  - $RequestHandler_13995892c7342.service(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$2.service(TapestryModule.java:994)
+  - $RequestHandler_13995892c7342.service(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$1.service(TapestryModule.java:984)
+  - $RequestHandler_13995892c7342.service(Unknown Source)
+  - org.apache.tapestry5.internal.services.StaticFilesFilter.service(StaticFilesFilter.java:89)
+  - $RequestHandler_13995892c7342.service(Unknown Source)
+  - org.apache.tapestry.Sampleproject.services.AppModule$1.service(AppModule.java:64)
+  - $RequestFilter_13995892c733d.service(Unknown Source)
+  - $RequestHandler_13995892c7342.service(Unknown Source)
+  - org.apache.tapestry5.internal.services.CheckForUpdatesFilter$2.invoke(CheckForUpdatesFilter.java:110)
+  - org.apache.tapestry5.internal.services.CheckForUpdatesFilter$2.invoke(CheckForUpdatesFilter.java:100)
+  - org.apache.tapestry5.ioc.internal.util.ConcurrentBarrier.withRead(ConcurrentBarrier.java:83)
+  - org.apache.tapestry5.internal.services.CheckForUpdatesFilter.service(CheckForUpdatesFilter.java:124)
+  - $RequestHandler_13995892c7342.service(Unknown Source)
+  - $RequestHandler_13995892c7337.service(Unknown Source)
+  - org.apache.tapestry5.http.modules.TapestryHttpModule$HttpServletRequestHandlerTerminator.service(TapestryHttpModule.java:469)
+  - org.apache.tapestry5.upload.internal.services.MultipartServletRequestFilter.service(MultipartServletRequestFilter.java:45)
+  - $HttpServletRequestHandler_13995892c7339.service(Unknown Source)
+  - org.apache.tapestry5.internal.services.IgnoredPathsFilter.service(IgnoredPathsFilter.java:69)
+  - $HttpServletRequestFilter_13995892c7335.service(Unknown Source)
+  - $HttpServletRequestHandler_13995892c7339.service(Unknown Source)
+  - org.apache.tapestry5.http.internal.gzip.GZipFilter.service(GZipFilter.java:60)
+  - $HttpServletRequestHandler_13995892c7339.service(Unknown Source)
+  - org.apache.tapestry5.http.modules.TapestryHttpModule$2.service(TapestryHttpModule.java:318)
+  - $HttpServletRequestHandler_13995892c7339.service(Unknown Source)
+  - $HttpServletRequestHandler_13995892c7330.service(Unknown Source)
+  - org.apache.tapestry5.http.TapestryFilter.runFilter(TapestryFilter.java:178)
+  - org.apache.tapestry5.http.TapestryFilter.doFilter(TapestryFilter.java:225)
+  - org.eclipse.jetty.servlet.FilterHolder.doFilter(FilterHolder.java:210)
+  - org.eclipse.jetty.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1594)
+  - org.eclipse.jetty.websocket.servlet.WebSocketUpgradeFilter.doFilter(WebSocketUpgradeFilter.java:164)
+  - org.eclipse.jetty.servlet.FilterHolder.doFilter(FilterHolder.java:202)
+  - org.eclipse.jetty.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1594)
+  - org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:506)
+  - org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:131)
+  - org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:580)
+  - org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122)
+  - org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:223)
+  - org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1571)
+  - org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+  - org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1372)
+  - org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:176)
+  - org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:463)
+  - org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1544)
+  - org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:174)
+  - org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1294)
+  - org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:129)
+  - org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:149)
+  - org.eclipse.jetty.server.handler.HandlerList.handle(HandlerList.java:51)
+  - org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122)
+  - org.eclipse.jetty.server.Server.handle(Server.java:562)
+  - org.eclipse.jetty.server.HttpChannel.lambda$handle$0(HttpChannel.java:406)
+  - org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:663)
+  - org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:398)
+  - org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:282)
+  - org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:319)
+  - org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:100)
+  - org.eclipse.jetty.io.SocketChannelEndPoint$1.run(SocketChannelEndPoint.java:101)
+  - org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:894)
+  - org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1038)
+  - java.base/java.lang.Thread.run(Thread.java:833)
+
+REQUEST:
+
+Basic Information:
+
+                contextPath: 
+                     method: GET
+                       path: /admindashboard
+                     locale: en_US
+                 serverName: localhost
+                 remoteHost: [0:0:0:0:0:0:0:1]
+
+Headers:
+
+                     Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+            Accept-Encoding: gzip, deflate, br
+            Accept-Language: en-US,en;q=0.9
+              Cache-Control: max-age=0
+                 Connection: keep-alive
+                       Host: localhost:8081
+                    Referer: http://localhost:8081/admin
+             Sec-Fetch-Dest: document
+             Sec-Fetch-Mode: navigate
+             Sec-Fetch-Site: same-origin
+             Sec-Fetch-User: ?1
+  Upgrade-Insecure-Requests: 1
+                 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0
+                  sec-ch-ua: "Microsoft Edge";v="119", "Chromium";v="119", "Not?A_Brand";v="24"
+           sec-ch-ua-mobile: ?0
+         sec-ch-ua-platform: "Windows"
+
+SYSTEM INFORMATION:
+
+Memory:
+      549,741,160 bytes free
+    1,077,936,128 bytes total
+    2,105,540,608 bytes max
+
+25 Threads:
+                                                                                  Reference Handler RUNNABLE, daemon, priority 10
+                                                                                          Finalizer WAITING, daemon, priority 8
+                                                                                  Signal Dispatcher RUNNABLE, daemon, priority 9
+                                                                                    Attach Listener RUNNABLE, daemon
+                                                                                Notification Thread RUNNABLE, daemon, priority 9
+                                                                                               main WAITING
+  qtp1262147530-17-acceptor-0@4cc51283-ServerConnector@69c53b72{HTTP/1.1, (http/1.1)}{0.0.0.0:8081} RUNNABLE, priority 3
+                                                                                   qtp1262147530-19 TIMED_WAITING
+                                                                                   qtp1262147530-20 TIMED_WAITING
+*                                                                                  qtp1262147530-21 RUNNABLE
+                                                                                   qtp1262147530-22 RUNNABLE
+                                                                                   qtp1262147530-23 TIMED_WAITING
+                                                                                   qtp1262147530-24 RUNNABLE
+                                                                     Session-HouseKeeper-418d1c03-1 TIMED_WAITING
+                                                                                        Scanner-0-1 TIMED_WAITING, daemon
+                                                              mysql-cj-abandoned-connection-cleanup TIMED_WAITING, daemon
+                                                        Hibernate Connection Pool Validation Thread TIMED_WAITING, daemon
+                                                                                   qtp1262147530-31 TIMED_WAITING
+                                                                                   qtp1262147530-33 TIMED_WAITING
+                                                                                   qtp1262147530-35 TIMED_WAITING
+                                                                          Tapestry PeriodicExecutor TIMED_WAITING, daemon
+                                                              mysql-cj-abandoned-connection-cleanup TIMED_WAITING, daemon
+                                                        Hibernate Connection Pool Validation Thread TIMED_WAITING, daemon
+                                                        Hibernate Connection Pool Validation Thread TIMED_WAITING, daemon
+                                                                                     Common-Cleaner TIMED_WAITING, daemon, priority 8

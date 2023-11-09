@@ -1,6 +1,7 @@
 package org.apache.tapestry.Sampleproject.pages;
 
 import org.apache.logging.log4j.LogManager;
+
 import org.apache.logging.log4j.Logger;
 import org.apache.tapestry5.Block;
 import org.apache.tapestry5.SymbolConstants;

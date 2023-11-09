@@ -1,0 +1,22 @@
+<html  title="Admin | Sampleproject"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
+      
+	<div >
+    <div ><br/>
+      <t:form  t:id="Admin">
+            <h2  class="input">Admin login here</h2>
+            <div class="col-12">
+            	 <t:textfield t:id="uname"  validate="required" placeholder="User Name"/>
+            </div><br/>
+            <div class="col-12">
+            	 <t:textfield t:id="password" t:value="password"  validate="required" placeholder="Password"/>
+            </div><br/>
+           
+            <div class="col-12"><br/>
+                <t:submit  value="Login"/>
+            </div>                               
+        </t:form>
+    </div>
+</div>  
+
+</html>

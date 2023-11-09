@@ -10,4 +10,5 @@ public interface Userservice {
 	void insertUsers(List<User> users);
 	void updateUserByEmail(List<User> users);
 	void DeleteUserByEmail(String email);
+	List<User> getUserDetails();
 }

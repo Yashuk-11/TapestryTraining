@@ -16,19 +16,13 @@
         <div class="col-12"> <br/>
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div class="container-fluid">
-               <!--     <t:pagelink page="index" class="navbar-brand">app</t:pagelink>  
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button> -->
+               
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 		 <ul class="navbar-nav mr-auto">
-                       <!--     <t:loop source="pageNames" value="pageName">
-                                <t:any element="li" class="nav-intem">
-                                   <t:pagelink page="prop:pageName" class="prop:classForPageName">${pageName}</t:pagelink>
-                                </t:any>
-                            </t:loop>-->
+                       
                         </ul> 
                         <span class="navbar-right">
+                        	<t:pagelink page="Admin" class="nav-link btn btn-light">Admin Login</t:pagelink> <br/>
                         	<t:pagelink page="Signup" class="nav-link btn btn-light">Sign up</t:pagelink> <br/>
                             <t:pagelink page="login" class="nav-link btn btn-light">Login</t:pagelink>
                         </span>
@@ -37,24 +31,9 @@
             </nav>
         </div>
     </div>
-  <!--  <div class="row">
-        <div class="col-12">
-            <t:alerts/>
-        </div>
-    </div>  -->
+
     <t:body />
- <!--   <div class="row">
-        <div class="col-12">
-            <hr />
-        </div>
-    </div> 
-    <div class="row">
-        <div class="col-12">
-            <footer>
-                <p>&copy; Company ${year}</p>
-            </footer>
-        </div>
-    </div> -->
+
 </div>
 
 </body>
